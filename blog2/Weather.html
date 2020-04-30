@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thời tiết</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="JS/Weather.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS-SCSS/style2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootsrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body onload="myFunctionLoad()">
+<div id="loader">
+    <!--    thêm hiệu ứng load ở đây-->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    </br></br></br></br></br></br>
+    <center><img src="Image/globe-earth-animation-15-2.gif"></center>
+    <center><h1>Đợi xíu...</h1></center>
+</div>
+<div style="display:none;" id="myDiv">
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <center><img src="Image/globe-earth-animation-15-2.gif"></center>
+        <h2 style="text-align: center">Thông tin thời tiết (Api Open Weather Map)</h2>
+        <center><h3>( Beta )</h3></center>
+    <center><h4>Nhấn để về trang chính<button onclick="MainPage()" class="btn btn-success">Chuyển trang</button></center>
+        <div class="aside2">
+            <h4>Nhập tên Tỉnh, Thành Phố ...</h4>
+            Tên: <input id="NameCountry" type="text" placeholder="Nhập nào">
+            <button onclick="Weather()">Tìm</button>
+            <br>
+
+<center><h5>----------------------------------------------------------------------------------</h5></center>
+        </div>
+    <div id="List">
+    <ul>
+        <li><h5>Nhiệt độ trung bình: <span id="temp">...............</span></h5></li>
+        <li><h5>Cảm nhận : <span id="Feels">...............</span></h5></li>
+        <li><h5>Nhiệt độ lớn nhất: <span id="tempX">...............</span></h5></li>
+        <li><h5>Nhiệt độ nhỏ nhất:<span id="tempY">...............</span></h5></li>
+        <li><h5>Độ ẩm: <span id="Am">...............</span></h5></li>
+        <li><h5>Mức gió trung bình: <span id="AVGWinds">...............</span></h5></li>
+        <li><h5>Mây: <span id="Clouds">...............</span></h5></li>
+    </ul>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    var myVar;
+
+    function myFunctionLoad() {
+        myVar = setTimeout(showPage, 2000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+    }
+</script>
+
+<script>
+    function MainPage() {
+        location.href = "index.html";
+    }
+</script>
