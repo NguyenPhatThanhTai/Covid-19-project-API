@@ -1,4 +1,4 @@
-$.getJSON("https://corona.lmao.ninja/v2/all", function (corona)
+$.getJSON("https://disease.sh/v2/all", function (corona)
 {
     //Dữ liệu cho box Thế Giới
     {
