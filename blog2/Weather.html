@@ -8,8 +8,10 @@
     <link rel="stylesheet" type="text/css" href="CSS-SCSS/style2.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <script src="https://maxcdn.bootsrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body onload="myFunctionLoad()">
+<div class="container">
 <div id="loader">
     <!--    thêm hiệu ứng load ở đây-->
     <div class="bg"></div>
@@ -24,28 +26,46 @@
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <center><img src="Image/globe-earth-animation-15-2.gif"></center>
+    <div class="col-12 col-s-12">
         <h2 style="text-align: center">Thông tin thời tiết (Api Open Weather Map)</h2>
         <center><h3>( Beta )</h3></center>
-    <center><h4>Nhấn để về trang chính<button onclick="MainPage()" class="btn btn-success">Chuyển trang</button></center>
-        <div class="aside2">
-            <h4>Nhập tên Tỉnh, Thành Phố ...</h4>
-            Tên: <input id="NameCountry" type="text" placeholder="Nhập nào">
-            <button onclick="Weather()">Tìm</button>
+        <center><h4>Nhấn để về trang chính<button onclick="MainPage()" class="btn btn-success">Chuyển trang</button></h4></center>
+            <div class="form-group">
+                <label for="NameCountry">+ Nhập tên Tỉnh, Thành Phố...</label>
+                <span><input type="text" class="form-control" id="NameCountry" placeholder="Nhập nào"></span>
+            </div>
+            <button class="btn btn-success" onclick="Weather()">Tìm kiếm</button>
             <br>
 
-<center><h5>----------------------------------------------------------------------------------</h5></center>
-        </div>
+
+
+        <center><h5>----------------------------------------------------------------------------------</h5></center>
+        <center><strong><h3>Thông tin: </strong></center>
     <div id="List">
-    <ul>
-        <li><h5>Nhiệt độ trung bình: <span id="temp">...............</span></h5></li>
-        <li><h5>Cảm nhận : <span id="Feels">...............</span></h5></li>
-        <li><h5>Nhiệt độ lớn nhất: <span id="tempX">...............</span></h5></li>
-        <li><h5>Nhiệt độ nhỏ nhất:<span id="tempY">...............</span></h5></li>
-        <li><h5>Độ ẩm: <span id="Am">...............</span></h5></li>
-        <li><h5>Mức gió trung bình: <span id="AVGWinds">...............</span></h5></li>
-        <li><h5>Mây: <span id="Clouds">...............</span></h5></li>
-    </ul>
+        <div class="alert alert-success">
+            <strong>Nhiệt độ trung bình: </strong> <span id="temp">...............</span>
+        </div>
+        <div class="alert alert-info">
+            <strong>Cảm nhận: </strong> <span id="Feels">...............</span>
+        </div>
+        <div class="alert alert-success">
+            <strong>Nhiệt độ lớn nhất: </strong> <span id="tempX">...............</span>
+        </div>
+        <div class="alert alert-info">
+            <strong>Nhiệt độ nhỏ nhất: </strong> <span id="tempY">...............</span>
+        </div>
+        <div class="alert alert-success">
+            <strong>Độ ẩm: </strong> <span id="Am">...............</span>
+        </div>
+        <div class="alert alert-info">
+            <strong>Sức gió trung bình: </strong> <span id="AVGWinds">...............</span>
+        </div>
+        <div class="alert alert-success">
+            <strong>Tần suất Mây trong khu vực: </strong> <span id="Clouds">...............</span>
+        </div>
     </div>
+</div>
+</div>
 </div>
 </body>
 </html>

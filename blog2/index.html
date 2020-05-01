@@ -116,8 +116,9 @@ jquery/3.1.0/jquery.min.js"></script>
 <!--kết thúc lưu trữ 3 box-->
 <div class="col-12 col-s-12" >
     <center><h2 id="chitiet"><b>Thông tin chi tiết</b></h2></center>
-    <center><h5>Nhấn để qua table cập nhật nhanh <button onclick="fastdatapage()" class="btn btn-success">Chuyển trang</button></h5></center>
-    <center><h5>Nhấn để qua xem thời tiết (Beta)<button onclick="Weather()" class="btn btn-success">Chuyển trang</button></h5></center>
+    <div class="row">
+        <center><h5>Nhấn để qua table cập nhật nhanh <button onclick="fastdatapage()" class="btn btn-success">Chuyển trang</button><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNhấn để qua xem thời tiết (Beta)<button onclick="Weather()" class="btn btn-success">Chuyển trang</button></span></h5></center>
+    </div>
     <h5 style="color: black; text-align: center">-- Tìm kiếm tên nước:
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Tên nước..." title="Ghi tên nước vào"> --
     </h5>
@@ -131,7 +132,7 @@ jquery/3.1.0/jquery.min.js"></script>
                 <th style="color: red; text-align: center" onclick="sortTable(4)">Tổng số người chết <button class="btn btn-danger">Sắp xếp</button></th>
                 <th style="color: green; text-align: center">Đang chữa trị</th>
                 <th style="color: green; text-align: center">Số người phục hồi mới</th>
-                <th style="color: green; text-align: center" onclick="sortTable(6)">Tổng số người phục hồi <button class="btn btn-success">Sắp xếp</button></th>
+                <th style="color: green; text-align: center" onclick="sortTable(7)">Tổng số người phục hồi <button class="btn btn-success">Sắp xếp</button></th>
             </tr>
         </table>
     </center>

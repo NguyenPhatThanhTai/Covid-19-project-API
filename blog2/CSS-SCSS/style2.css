@@ -82,6 +82,7 @@
     background-color: white;
 }
 
+
 .row::after {
     content: "";
     clear: both;
