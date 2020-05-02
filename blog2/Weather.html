@@ -31,16 +31,16 @@
         <center><h3>( Beta )</h3></center>
         <center><h4>Nhấn để về trang chính<button onclick="MainPage()" class="btn btn-success">Chuyển trang</button></h4></center>
             <div class="form-group">
-                <label for="NameCountry">+ Nhập tên Tỉnh, Thành Phố...</label>
+                Nhấn để lấy thời tiết theo vị trí hiện tại ( Vui lòng cho phép<strong> Vị Trí </strong>)<button onclick="getLocation()" class="btn btn-success" id="Locati"> Xác định vị trí </button> hoặc
+                <label for="NameCountry"> Nhập tên Tỉnh, Thành Phố... dưới đây !!! (<strong> Nếu nhập có dấu mà không ra kết quả vui lòng nhập không dấu </strong>)</label>
                 <span><input type="text" class="form-control" id="NameCountry" placeholder="Nhập nào"></span>
             </div>
             <button class="btn btn-success" onclick="Weather()">Tìm kiếm</button>
             <br>
 
-
-
+        <center><h3 id="testLoad"></h3></center>
         <center><h5>----------------------------------------------------------------------------------</h5></center>
-        <center><strong><h3>Thông tin: </strong></center>
+        <center><strong><h3>Thông tin của: <span id="LocaName">......</span></h3></strong></center>
     <div id="List">
         <div class="alert alert-success">
             <strong>Nhiệt độ trung bình: </strong> <span id="temp">...............</span>
