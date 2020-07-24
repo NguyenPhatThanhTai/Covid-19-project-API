@@ -1,8 +1,10 @@
-    $(document).ready(function(){
+
+$(document).ready(function(){
 
 
-        $.getJSON("https://api.covid19api.com/summary", function (corona)
+        $.getJSON("https://covid-19-inf.herokuapp.com/", function (corona)
         {
+            
             var Maxcase = 0;
             var Conflus = '';
             var Deaflus = '';
@@ -11,48 +13,48 @@
             var Treatment = '';
             $.each(corona.Countries, function (key, value) {
                 Treatment = value.TotalConfirmed - (value.TotalDeaths + value.TotalRecovered);
-                if(value.NewConfirmed > 0){
+                if(value.NewCase > 0){
                     Conflus = '+ '+value.NewConfirmed;
                 }
                 else {
                     Conflus = '';
                 }
     
-                if(value.NewDeaths > 0){
+                if(value.TotalDeath > 0){
                     Deaflus ='+ '+value.NewDeaths;
                 }
                 else {
                     Deaflus = '';
                 }
     
-                if(value.NewRecovered > 0){
+                if(value.TotalRecovery > 0){
                     Recflus ='+ '+value.NewRecovered;
                 }
                 else{
                     Recflus = '';
                 }
     
-                if(value.NewConfirmed > 100){
+                if(value.InfectionRate > 100){
                     Conflus = '<span style="color: steelblue"><B>+ '+value.NewConfirmed+'</B></span>'
                 }
     
-                if(value.NewDeaths > 100){
+                if(value.NewDeath > 100){
                     Deaflus = '<span style="color: red"><b>+ '+value.NewDeaths+'</b></span>'
                 }
     
-                if(value.NewRecovered > 100){
+                if(value.Infected > 100){
                     Recflus = '<span style="color: green"><b>+ '+value.NewRecovered+'</b></span>'
                 }
     
                 virus_data += '<tr>';
-                virus_data += '<td><B> '+value.Country+' </B></td>';
+                virus_data += '<td><B> '+value.TotalCase+' </B></td>';
                 virus_data += '<td> '+Conflus+' </td>';
-                virus_data += '<td> '+value.TotalConfirmed+' </td>';
+                virus_data += '<td> '+value.Infected+' </td>';
                 virus_data += '<td> '+Deaflus+' </td>';
-                virus_data += '<td> '+value.TotalDeaths+' </td>';
+                virus_data += '<td> '+value.TotalDeath+' </td>';
                 virus_data += '<td> '+Treatment+' </td>';
                 virus_data += '<td> '+Recflus+' </td>';
-                virus_data += '<td> '+value.TotalRecovered+' </td>';
+                virus_data += '<td> '+value.TotalRecovery+' </td>';
     
                 //Dữ liệu box Việt Nam
                 if(value.Country === 'Viet Nam')
@@ -89,27 +91,26 @@
 
 
 
-        // $.ajax({
-        //     data: 'GET',
-        //     url: 'https://ncovi.huynhhieu.com/api.php?code=external&fbclid=IwAR3JhX26KhvZmG3rUECy8UPfgkH0snH2EArpNdXXkNucXDLAPIQj1DbmaEk',
-        //     success: function(data)
-        //     {
-        //
-        //         //Globe data
-        //         var result = JSON.parse(data);
-        //         var virus_data = '';
-        //         $.each(result.data, function (key, value) {
-        //             virus_data += '<tr>';
-        //             virus_data += '<td> '+value.country+' </td>';
-        //             virus_data += '<td> '+value.cases+' </td>';
-        //             virus_data += '<td> '+value.deaths+' </td>';
-        //             virus_data += '<td> '+value.recovered+' </td>';
-        //         });
-        //         $('#virus_fast').append(virus_data);
-        //
-        //     },
-        //
-        // });
+        $.ajax({
+            data: 'GET',
+            url: 'https://ncovi.huynhhieu.com/api.php?code=external&fbclid=IwAR3JhX26KhvZmG3rUECy8UPfgkH0snH2EArpNdXXkNucXDLAPIQj1DbmaEk',
+            success: function(data)
+            {
+
+                //Globe data
+                var result = JSON.parse(data);
+                var virus_data = '';
+                $.each(result.data, function (key, value) {
+                    virus_data += '<tr>';
+                    virus_data += '<td> '+value.country+' </td>';
+                    virus_data += '<td> '+value.cases+' </td>';
+                    virus_data += '<td> '+value.deaths+' </td>';
+                    virus_data += '<td> '+value.recovered+' </td>';
+                });
+
+            },
+
+        });
 
     });
     

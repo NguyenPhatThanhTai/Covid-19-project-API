@@ -34,6 +34,7 @@
                 Nhấn để lấy thời tiết theo vị trí hiện tại ( Vui lòng cho phép<strong> Vị Trí </strong>)<button onclick="getLocation()" class="btn btn-success" id="Locati"> Xác định vị trí </button> hoặc
                 <label for="NameCountry"> Nhập tên Tỉnh, Thành Phố... dưới đây !!! (<strong> Nếu nhập có dấu mà không ra kết quả vui lòng nhập không dấu và ngược lại !!!</strong>)</label>
                 <span><input type="text" class="form-control" id="NameCountry" placeholder="Nhập nào"></span>
+                <h4 id="None" style="color: red"></h4>
             </div>
             <button class="btn btn-success" onclick="Weather()">Tìm kiếm</button>
             <br>
@@ -92,7 +93,6 @@
 <script>
     // Get the input field
     var input = document.getElementById("NameCountry");
-
     // Execute a function when the user releases a key on the keyboard
     input.addEventListener("keyup", function(event) {
         // Number 13 is the "Enter" key on the keyboard
